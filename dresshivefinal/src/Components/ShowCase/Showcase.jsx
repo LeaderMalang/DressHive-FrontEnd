@@ -1,43 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const products = [
-    {
-        id: 1,
-        name: 'Earthen Bottle',
-        href: '#',
-        price: '$48',
-        imageSrc: './Images/keagan-henman-xPJYL0l5Ii8-unsplash.jpg',
-        imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    },
-    {
-        id: 2,
-        name: 'Nomad Tumbler',
-        href: '#',
-        price: '$35',
-        imageSrc: './Images/marcus-loke-xXJ6utyoSw0-unsplash.jpg',
-        imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-    },
-    {
-        id: 3,
-        name: 'Focus Paper Refill',
-        href: '#',
-        price: '$89',
-        imageSrc: './Images/mnz-ToLMORRb97Q-unsplash.jpg',
-        imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-    },
-    {
-        id: 4,
-        name: 'Mechanical Pencil',
-        href: '#',
-        price: '$35',
-        imageSrc: './Images/alex-haigh-fEt6Wd4t4j0-unsplash.jpg',
-        imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    },
-    // More products...
-];
 
-function Showcase({ addToCart }) {
+
+function Showcase({ products }) {
     return (
         <div className="mt-10 px-10">
             <div className="relative">
@@ -66,7 +32,8 @@ function Showcase({ addToCart }) {
                                     <div className="p-4 absolute bottom-0 right-auto left-0 hidden group-hover:block ease-in duration-300">
                                         <h3 className="mt-2 text-lg font-bold text-gray-700 text-left">{product.name}</h3>
                                         <p className="mt-1 text-lg font-medium text-gray-900 text-left">{product.price}</p>
-                                        <button className="bg-red-600 px-5 py-2 rounded-md mt-2" onClick={() => addToCart(product)}>Add To Cart</button>
+                                        <button className="bg-red-600 px-5 py-2 rounded-md mt-2"><Link to={`/products/${product.id}`}>View Details</Link></button>
+
                                     </div>
                                 </div>
                             </div>
@@ -77,4 +44,5 @@ function Showcase({ addToCart }) {
         </div>
     );
 }
+
 export default Showcase;

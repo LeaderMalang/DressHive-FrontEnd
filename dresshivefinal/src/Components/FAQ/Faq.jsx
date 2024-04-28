@@ -24,7 +24,7 @@ const faqs = [
 const FAQ = () => {
   return (
     <>
-      <div className='mt-6'>
+      <div className='mt-6 text-gray-700'>
         <div className="container mx-auto p-4 w-8/12">
           <div className="relative mb-16">
             <h1 className="text-4xl font-medium text-gray-700 relative text-center">Frequently Asked Questions</h1>

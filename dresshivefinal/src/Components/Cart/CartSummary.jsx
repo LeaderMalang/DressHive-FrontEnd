@@ -5,7 +5,7 @@ function CartSummary({ cartItems, removeFromCart }) {
   return (
     <div className="flex flex-col md:flex-row md:justify-between min-h-[85vh] px-4 md:px-0 ">
       <div className="w-full md:w-[75%] mb-8 md:mb-0 py-4 px-14">
-        <h2 className="text-2xl font-semibold mb-4">Products</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-700">Products</h2>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {cartItems.map((item) => (
             <div key={item.id} className="group">
@@ -56,7 +56,7 @@ function CartSummary({ cartItems, removeFromCart }) {
               Continue Shopping
             </Link>
             <Link
-              to="/signup"
+              to="/"
               className="text-white bg-red-600 hover:bg-red-700 font-medium text-sm px-4 lg:px-10 py-2 lg:py-2.5"
             >
               Check Out
