@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { IoMdCart } from "react-icons/io";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +8,6 @@ export default function Header() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
     return (
         <header className="shadow sticky z-50 top-0">
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -25,7 +25,7 @@ export default function Header() {
                                 <NavLink
                                     to="/"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-red-600" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-red-600 lg:p-0`
                                     }
                                 >
                                     Home
@@ -35,7 +35,7 @@ export default function Header() {
                                 <NavLink
                                     to="/showcase"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-red-600" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-red-600 lg:p-0`
                                     }
                                 >
                                     Showcase
@@ -45,7 +45,7 @@ export default function Header() {
                                 <NavLink
                                     to="/about"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-red-600" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-red-600 lg:p-0`
                                     }
                                 >
                                     About
@@ -55,7 +55,7 @@ export default function Header() {
                                 <NavLink
                                     to="/contact"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-red-600" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-red-600 lg:p-0`
                                     }
                                 >
                                     Contact Us
@@ -65,7 +65,7 @@ export default function Header() {
                                 <NavLink
                                     to="/faq"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive? "text-red-600" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-red-600 lg:p-0`
                                     }
                                 >
                                     FAQ
@@ -100,7 +100,7 @@ export default function Header() {
                                     <NavLink
                                         to="/"
                                         onClick={toggleMenu}
-                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-orange-700"
+                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-red-600"
                                     >
                                         Home
                                     </NavLink>
@@ -109,7 +109,7 @@ export default function Header() {
                                     <NavLink
                                         to="/portfolio"
                                         onClick={toggleMenu}
-                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-orange-700"
+                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-red-600"
                                     >
                                         Portfolio
                                     </NavLink>
@@ -118,7 +118,7 @@ export default function Header() {
                                     <NavLink
                                         to="/about"
                                         onClick={toggleMenu}
-                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-orange-700"
+                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-red-600"
                                     >
                                         About
                                     </NavLink>
@@ -127,7 +127,7 @@ export default function Header() {
                                     <NavLink
                                         to="/contact"
                                         onClick={toggleMenu}
-                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-orange-700"
+                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-red-600"
                                     >
                                         Contact Us
                                     </NavLink>
@@ -136,7 +136,7 @@ export default function Header() {
                                     <NavLink
                                         to="/faq"
                                         onClick={toggleMenu}
-                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-orange-700"
+                                        className="block py-2 pl-4 pr-10 text-gray-700 hover:text-red-600"
                                     >
                                         FAQ
                                     </NavLink>
@@ -145,17 +145,24 @@ export default function Header() {
                         </div>
                         <div className="hidden lg:flex lg:items-center">
                             <Link
-                                to="#"
-                                className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                                to="/login"
+                                className="text-gray-800 hover:bg-gray-50 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
                             >
                                 Log in
                             </Link>
                             <Link
-                                to="#"
-                                className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                                to="/signup"
+                                className="text-white bg-red-600 hover:bg-red-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
                             >
-                                Get started
+                                Sign Up
                             </Link>
+                            <Link
+                                to="/cart"
+                                className="text-red-600 hover:text-red-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                            >
+                                <IoMdCart size={25}/>
+                            </Link>
+                            <div className='h-3 w-3 rounded-full bg-red-600 border-2 border-white absolute top-[18px] right-[62px] opacity-0'></div>
                         </div>
                     </div>
                 </div>

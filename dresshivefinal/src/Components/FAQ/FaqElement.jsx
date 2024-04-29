@@ -10,14 +10,14 @@ const FaqElement = ({ question, answer }) => {
   };
 
   return (
-    <div className="border-b-2 border-black p-4 my-2">
+    <div className="border-b-2 border-gray-700 p-4 my-2">
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-semibold">{question}</h2>
-        <button onClick={toggleOpen} className="text-gray-500 focus:outline-none">
+        <button onClick={toggleOpen} className="text-gray-700 focus:outline-none">
           {isOpen ? (
-            <IoIosArrowUp size={20} style={{ fill: 'black' }} />
+            <IoIosArrowUp size={20} style={{ fill: 'text-gray-700' }} />
           ) : (
-            <IoIosArrowDown size={20} style={{ fill: 'black' }} />
+            <IoIosArrowDown size={20} style={{ fill: 'text-gray-700' }} />
           )}
         </button>
       </div>
