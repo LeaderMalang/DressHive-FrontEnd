@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 function Showcase({ products }) {
     return (
         <div className="mt-10 px-10">

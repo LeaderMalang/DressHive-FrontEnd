@@ -23,8 +23,9 @@ function CartSummary({ cartItems, removeFromCart }) {
 
                 <h3 className="mt-2 text-lg font-bold text-gray-700 text-left">{item.name}</h3>
                 <p className="mt-1 text-lg font-medium text-gray-900 text-left">{item.price}</p>
+                <p className="mt-1 text-lg font-medium text-gray-900 text-left">Quantity: {item.quantity}</p>
                 <button
-                  className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 w-full mt-1"
+                  className="px-3 py-1 bg-red-600 text-white rounded-md hover:bg-red-500 w-full mt-1"
                   onClick={() => removeFromCart(item.id)}
                 >
                   Remove
@@ -39,14 +40,17 @@ function CartSummary({ cartItems, removeFromCart }) {
         <h2 className="text-2xl font-semibold mb-4">Cart</h2>
         <ul>
           {cartItems.map((item, index) => (
-            <li key={index} className="flex justify-between items-center mb-4">
-              <span>{item.name} - ${item.price}</span>
+            <li key={index} className="border-t-2 border-b-2 py-2 justify-between items-center mb-4">
+              <div>{item.name}</div>
+              <div>Price: { item.price}</div>
+              <div>Quantity: {item.quantity} Pcs</div>
+              <div>Total: ${parseFloat(item.price.replace('$', '')) * item.quantity}</div>
             </li>
           ))}
         </ul>
         <div className='absolute bottom-10'>
           <h3 className="text-lg font-semibold mt-4">
-            Total: ${cartItems.reduce((total, item) => total + parseFloat(item.price.replace('$', '')), 0)}
+            Total: ${cartItems.reduce((total, item) => total + parseFloat(item.price.replace('$', '')) * item.quantity, 0)}
           </h3>
           <div className='w-full flex justify-between items-center mt-5'>
             <Link

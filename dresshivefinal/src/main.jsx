@@ -7,15 +7,17 @@ import About from './Components/About/About.jsx';
 import Contact from './Components/Contact/Contact.jsx';
 import Showcase from './Components/ShowCase/Showcase.jsx';
 import ShowCaseDetails from './Components/ShowCase/ShowCaseDetails.jsx';
-import User from './Components/User/User.jsx';
 import Auth0ProviderWithHistory from './Auth';
 import Login from './Components/Login/Login.jsx';
 import Signup from './Components/Signup/Signup.jsx';
 import FAQ from './Components/FAQ/Faq.jsx';
 import CartSummary from './Components/Cart/CartSummary.jsx';
-import './index.css'
-import './App.css'
+import HomePageCategory from './Components/HomePageCategory/HomePageCategory.jsx';
+import HomePageCategoryDetails from './Components/HomePageCategory/HomePageCategoryDetails.jsx';
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary.jsx';
+
+import './index.css';
+import './App.css';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -47,6 +49,7 @@ const App = () => {
         price: '$48',
         imageSrc: '../Images/keagan-henman-xPJYL0l5Ii8-unsplash.jpg',
         imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
+        category: 'Formal',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus'
     },
     {
@@ -56,6 +59,7 @@ const App = () => {
         price: '$35',
         imageSrc: '../Images/marcus-loke-xXJ6utyoSw0-unsplash.jpg',
         imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
+        category: 'Jeans',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus'
     },
     {
@@ -65,6 +69,7 @@ const App = () => {
         price: '$89',
         imageSrc: '../Images/mnz-ToLMORRb97Q-unsplash.jpg',
         imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
+        category: 'Pants',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus'
     },
     {
@@ -74,15 +79,36 @@ const App = () => {
         price: '$35',
         imageSrc: '../Images/alex-haigh-fEt6Wd4t4j0-unsplash.jpg',
         imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+        category: 'Tees',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus'
+    },
+    {
+        id: 4,
+        name: 'Mechanical Pencil',
+        href: '#',
+        price: '$35',
+        imageSrc: '../Images/alex-haigh-fEt6Wd4t4j0-unsplash.jpg',
+        imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+        category: 'Tees',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus'
+    },
+    {
+        id: 4,
+        name: 'Mechanical Pencil',
+        href: '#',
+        price: '$35',
+        imageSrc: '../Images/alex-haigh-fEt6Wd4t4j0-unsplash.jpg',
+        imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+        category: 'Teesayugy',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus'
     },
     // More products...
-];
+  ];
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<Layout/>}>
-        <Route path='' element={<Home/>}/>
+        <Route path='' element={<Home products={products} />} />
         <Route path='showcase' element={<Showcase products={products}/>}/>
         <Route path='products/:id' element={<ErrorBoundary><ShowCaseDetails products={products} addToCart={addToCart}/></ErrorBoundary>}/>
         <Route path='about' element={<About/>}/>
@@ -91,6 +117,7 @@ const App = () => {
         <Route path='Login' element={<Login/>}/>
         <Route path='Signup' element={<Signup/>}/>
         <Route path='cart' element={<CartSummary cartItems={cartItems} removeFromCart={removeFromCart}/>}/>
+        <Route path='category/:categoryName' element={<HomePageCategoryDetails products={products} />} />
       </Route>
     )
   );
