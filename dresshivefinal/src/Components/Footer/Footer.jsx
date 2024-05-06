@@ -22,12 +22,12 @@ export default function Footer() {
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
                                     <NavLink to="/" className={({isActive}) =>
-                                        `hover:underline ${isActive? "text-orange-700" : "text-gray-700"}`}>
+                                        `hover:underline ${isActive? "text-red-600" : "text-gray-700"}`}>
                                         Home
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/about" className={({isActive}) => `hover:underline ${isActive? "text-orange-700" : "text-gray-700"}`}>
+                                    <NavLink to="/about" className={({isActive}) => `hover:underline ${isActive? "text-red-600" : "text-gray-700"}`}>
                                         About
                                     </NavLink>
                                 </li>
