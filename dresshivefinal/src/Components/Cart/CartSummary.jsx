@@ -60,7 +60,7 @@ function CartSummary({ cartItems, removeFromCart }) {
               Continue Shopping
             </Link>
             <Link
-              to="/"
+              to="/checkout"
               className="text-white bg-red-600 hover:bg-red-700 font-medium text-sm px-4 lg:px-10 py-2 lg:py-2.5"
             >
               Check Out
