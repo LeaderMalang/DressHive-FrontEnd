@@ -15,6 +15,7 @@ import CartSummary from './Components/Cart/CartSummary.jsx';
 import HomePageCategory from './Components/HomePageCategory/HomePageCategory.jsx';
 import HomePageCategoryDetails from './Components/HomePageCategory/HomePageCategoryDetails.jsx';
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary.jsx';
+import CheckOut from './Components/CheckOut/CheckOut.jsx'
 
 import './index.css';
 import './App.css';
@@ -116,6 +117,7 @@ const App = () => {
         <Route path='faq' element={<FAQ/>}/>
         <Route path='Login' element={<Login/>}/>
         <Route path='Signup' element={<Signup/>}/>
+        <Route path='checkout' element={<CheckOut cartItems={cartItems}/>}/>
         <Route path='cart' element={<CartSummary cartItems={cartItems} removeFromCart={removeFromCart}/>}/>
         <Route path='category/:categoryName' element={<HomePageCategoryDetails products={products} />} />
       </Route>

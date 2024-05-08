@@ -1,6 +1,36 @@
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    if (e.nativeEvent.submitter.name === "loginButton") {
+      const { email, password } = formData;
+      console.log("Email:", email);
+      console.log("Password:", password);
+      // Here you can perform any validation or submit logic
+      console.log("Form submitted with data:", formData);
+      // Reset form after submission
+      setFormData({
+        email: "",
+        password: ""
+      });
+    }
+  };
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 text-gray-700">
@@ -10,7 +40,7 @@ export default function Login() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6" onSubmit={submitForm}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6">
                 Email address
@@ -20,6 +50,8 @@ export default function Login() {
                   id="email"
                   name="email"
                   type="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   autoComplete="email"
                   required
                   className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
@@ -43,17 +75,19 @@ export default function Login() {
                   id="password"
                   name="password"
                   type="password"
-                  autoComplete="current-password"
+                  value={formData.password}
+                  onChange={handleChange}
                   required
                   className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
 
-            <div>
+            <div className="flex justify-center items-center">
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+                name="loginButton"
+                className="flex w-1/2 justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
               >
                 Log in
               </button>
@@ -69,5 +103,5 @@ export default function Login() {
         </div>
       </div>
     </>
-  )
+  );
 }
